@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobert <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 07:11:27 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/23 07:28:01 by grobert          ###   ########.fr       */
+/*   Updated: 2023/08/29 18:25:08 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
 void	Harl::debug( void ) {
-	std::cout << "love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
 void    Harl::info( void ) {

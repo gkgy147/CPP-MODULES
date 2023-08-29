@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Streamed.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/19 08:44:44 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/29 16:47:57 by grobert          ###   ########.fr       */
+/*   Created: 2023/08/29 18:50:24 by grobert           #+#    #+#             */
+/*   Updated: 2023/08/29 18:59:50 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
+#ifndef STREAMED_HPP
+#define STREAMED_HPP
 
+#include <string.h>
+#include <iostream>
+#include <fstream>
 
-int	main(int ac, char **av){
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; av[i]; i++) {
-			for (int j = 0; av[i][j]; j++)
-				std::cout << (char) toupper(av[i][j]);
-			if (i < ac - 1)
-				std::cout << ' ';
-		}
-	}
-	std::cout << std::endl;
-	return (0);
-}
+class Streamed
+{
+
+	private:
+		
+	public:
+    		Streamed();
+    		~Streamed();
+
+    		std::string ft_replace(std::string content, std::string s1, std::string s2);
+};
+
+#endif

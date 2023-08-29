@@ -6,7 +6,7 @@
 /*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:38:09 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/23 03:52:03 by grobert          ###   ########.fr       */
+/*   Updated: 2023/08/29 18:34:23 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 class Streamed
 {

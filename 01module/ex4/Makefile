@@ -3,27 +3,26 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+         #
+#    By: grobert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/22 17:36:31 by grobert           #+#    #+#              #
-#    Updated: 2023/08/26 15:00:48 by grobert          ###   ########.fr        #
+#    Created: 2023/08/29 18:49:43 by grobert           #+#    #+#              #
+#    Updated: 2023/08/29 18:50:12 by grobert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Zombie
-
+NAME	= Streamed
 CC	= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM	= rm -rf
 
 OBJDIR	= .objfiles
 
-FILES	= main Zombie zombieHorde
+FILES	= main Streamed
 
 SRC	= $(FILES:=.cpp)
 
 OBJ	= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER	= Zombie.hpp
+HEADER	= Streamed.hpp
 
 .PHONY:	all clean fclean re
 
@@ -43,3 +42,4 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
+

@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: grobert <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/22 00:32:29 by grobert           #+#    #+#              #
-#    Updated: 2023/08/22 00:34:02 by grobert          ###   ########.fr        #
+#    Updated: 2023/08/26 14:59:48 by grobert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Zombie
 
 CC	= c++
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM	= rm -rf
 
 OBJDIR	= .objfiles
