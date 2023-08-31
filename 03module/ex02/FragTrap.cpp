@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grobert <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 07:23:38 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/26 07:36:41 by grobert          ###   ########.fr       */
+/*   Updated: 2023/08/31 14:28:49 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,38 @@ FragTrap::~FragTrap()
 	std::cout << " FRAGTRAP " << this->_name << " destructor called. " << std::endl;
 }
 
-void	FragTrap::highFive( void ) {
-	if (this->_energyPoints <= 0) {
-		std::cout << " FRAGTRAP " << this->_name << " is out of energy. " << std::endl;
-		return;
-	}
+FragTrap::FragTrap(FragTrap const &other) : ClapTrap(other)
+{
+    std::cout << "FragTrap copy constructor called" << std::endl;
+    *this = other;
+}
 
-	std::cout << " FLAGTRAP " << this->_name << " high five lovely people " << std::endl;
-	this->_energyPoints -= 1;
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
+{
+    std::cout << "FragTrap assignment operator called" << std::endl;
+    if (this != &rhs)
+    {
+        this->_name = rhs._name;
+        this->_hitPoints = rhs._hitPoints;
+        this->_energyPoints = rhs._energyPoints;
+        this->_attackDamage = rhs._attackDamage;
+    }
+    return *this;
+}
+
+void FragTrap::highFivesGuys(void)
+{
+    std::cout << "FragTrap " << this->_name << " request a high five from you!" << std::endl;
+}
+
+void FragTrap::attack(std::string const & target)
+{
+    if (_energyPoints <= 0 || _hitPoints <= 0)
+    {
+        std::cout << "FragTrap " << _name << " has no energy to attack!" << std::endl;
+        return ;
+    }
+    std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+    _energyPoints -= 1;
 }
 

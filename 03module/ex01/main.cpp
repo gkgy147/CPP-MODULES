@@ -6,7 +6,7 @@
 /*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 01:05:03 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/26 03:56:42 by grobert          ###   ########.fr       */
+/*   Updated: 2023/08/31 14:02:52 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 int main()
 {
-   // ClapTrap claptrap1;
-    ClapTrap claptrap2("Ragnar Lothbrok");
-    ClapTrap claptrap3(claptrap2);
-    ClapTrap claptrap4("Floki");
-
-   // claptrap1.attack("Ragnar Lothbrok");
-    claptrap2.takeDamage(100000000);
-    claptrap2.beRepaired(10);
-
-    claptrap2.attack("Floki");
-    claptrap4.takeDamage(5);
-    claptrap4.beRepaired(1000);
-    claptrap4.takeDamage(1000);
-    claptrap4.beRepaired(1000);
+    ScavTrap scav("He-Man");
+    ScavTrap scav2("Spiderman");
+    ScavTrap scav3 = scav;
+    scav.attack("Thor");
+    scav2.takeDamage(500);
+    scav2.beRepaired(10);
+    scav2.guardGate();
     return 0;
 }
