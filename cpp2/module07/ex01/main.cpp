@@ -5,40 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 10:56:41 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/31 19:20:41 by grobert          ###   ########.fr       */
+/*   Created: 2023/10/09 20:23:50 by grobert           #+#    #+#             */
+/*   Updated: 2023/10/09 20:33:36 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "iter.hpp"
 
-#include "WrongCat.hpp"
-
-
-int main( void )
+int main(void)
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+	int N = 5;
+    int arr1[] = { 1, 2, 3, 4, 5 };
 
-    delete j;//should not create a leak
-    delete i;
+    std::cout << "arr1: " << std::endl;
+    iter(arr1, N, &print);
 
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
+    double arr2[] = { 1.1, 2.2, 3.3, 4.4, 5.5 };
 
-    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
-    
-    /*const Animal* meta = new Animal();
+    std::cout << "\narr2: " << std::endl;
+    iter(arr2, N, &print);
 
-    meta->makeSound();
+    char arr3[] = { 'a', 'b', 'c', 'd', 'e' };
 
-    delete  meta;*/
+    std::cout << "\narr3: " << std::endl;
+    iter(arr3, N, &print);
 
-    return 0;
+    std::string arr4[] = { "one", "two", "three", "four", "five" };
+
+    std::cout << "\narr4: " << std::endl;
+    iter(arr4, N, &print);
+
+    return (0);
 }

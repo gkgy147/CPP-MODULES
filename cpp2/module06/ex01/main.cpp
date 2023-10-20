@@ -5,40 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: grobert <georgerobert147@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 10:56:41 by grobert           #+#    #+#             */
-/*   Updated: 2023/08/31 19:20:41 by grobert          ###   ########.fr       */
+/*   Created: 2023/10/09 14:19:29 by grobert           #+#    #+#             */
+/*   Updated: 2023/10/09 14:37:16 by grobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Serializer.hpp"
 
-#include "WrongCat.hpp"
-
-
-int main( void )
+int	main(void)
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+	
+	Data		*ptr = new Data;
+	Data		*new_ptr;
+	uintptr_t	raw;
 
-    delete j;//should not create a leak
-    delete i;
+	ptr->data = "test string";
+	raw = Serializer::serialize(ptr);
+	new_ptr = Serializer::deserialize(raw);
+	std::cout << "new_ptr->data = " << new_ptr->data <<std::endl;
 
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
-
-    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
-    
-    /*const Animal* meta = new Animal();
-
-    meta->makeSound();
-
-    delete  meta;*/
-
-    return 0;
+	delete ptr;
+	return 0;
 }
